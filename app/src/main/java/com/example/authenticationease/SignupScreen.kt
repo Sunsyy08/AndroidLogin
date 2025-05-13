@@ -10,6 +10,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.*
 import androidx.compose.ui.unit.*
 import com.example.authenticationease.ui.theme.AuthenticationEaseTheme
@@ -32,7 +33,6 @@ fun SignupScreen() {
     var confirmPassword by remember { mutableStateOf("") }
 
     val scrollState = rememberScrollState()
-
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -49,7 +49,7 @@ fun SignupScreen() {
             label = { Text("이메일") },
             placeholder = { Text("example@email.com") },
             singleLine = true,
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
         )
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -75,13 +75,18 @@ fun SignupScreen() {
             singleLine = true,
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+
         )
 
         Spacer(modifier = Modifier.height(36.dp))
 
         Button(
             onClick = { /* TODO: 회원가입 처리 */ },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color(0xFF2196F3),
+                contentColor = Color.White
+            ),
             modifier = Modifier
                 .fillMaxWidth()
                 .height(52.dp)

@@ -10,6 +10,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.*
 import androidx.compose.ui.unit.*
 import com.example.authenticationease.ui.theme.AuthenticationEaseTheme
@@ -68,6 +69,10 @@ fun LoginScreen() {
 
         Button(
             onClick = { /* TODO: 로그인 처리 */ },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color(0xFF2196F3),
+                contentColor = Color.White
+            ),
             modifier = Modifier
                 .fillMaxWidth()
                 .height(52.dp)
