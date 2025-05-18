@@ -1,5 +1,6 @@
 package com.example.authenticationease
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,6 +11,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.*
 import androidx.compose.ui.unit.*
 import com.example.authenticationease.ui.theme.AuthenticationEaseTheme
@@ -32,6 +34,7 @@ fun SignupScreen() {
     var confirmPassword by remember { mutableStateOf("") }
 
     val scrollState = rememberScrollState()
+    val context = LocalContext.current   // context 가져오기
 
     Column(
         modifier = Modifier
@@ -81,7 +84,10 @@ fun SignupScreen() {
         Spacer(modifier = Modifier.height(36.dp))
 
         Button(
-            onClick = { /* TODO: 회원가입 처리 */ },
+            onClick = {
+                // 회원가입 처리 완료 후 로그인 화면으로 이동
+                context.startActivity(Intent(context, LoginActivity::class.java))
+            },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(52.dp)
