@@ -40,7 +40,12 @@ android {
 }
 
 dependencies {
+    // Compose Navigation
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+    // Animated Navigation (Accompanist)
+    implementation("com.google.accompanist:accompanist-navigation-animation:0.34.0") // 최신 버전 확인 권장
 
+    implementation("androidx.compose.material:material-icons-extended")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
