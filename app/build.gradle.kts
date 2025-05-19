@@ -40,6 +40,24 @@ android {
 }
 
 dependencies {
+
+    // CameraX core
+    implementation("androidx.camera:camera-core:1.3.0")
+    implementation("androidx.camera:camera-camera2:1.3.0")
+
+// CameraX Lifecycle
+    implementation("androidx.camera:camera-lifecycle:1.3.0")
+
+// CameraX View (PreviewView)
+    implementation("androidx.camera:camera-view:1.3.0")
+
+// CameraX Compose interop
+    implementation("androidx.camera:camera-view:1.3.0")
+    implementation("androidx.compose.ui:ui:1.5.0")
+
+// 권한 처리용
+    implementation("androidx.activity:activity-compose:1.8.0")
+
     // Compose Navigation
     implementation("androidx.navigation:navigation-compose:2.7.7")
     // Animated Navigation (Accompanist)
